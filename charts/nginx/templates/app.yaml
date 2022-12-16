@@ -1,20 +1,21 @@
----
-apiVersion: v1
-kind: ReplicationController
+apiVersion: apps/v1
+kind: Deployment
 metadata:
+  name: nginx-deployment
   labels:
-    name: javawebapp
-  name: java-controller
+    app: nginx
 spec:
   replicas: {{.Values.replicas}}
+  selector:
+    matchLabels:
+      app: nginx
   template:
     metadata:
       labels:
-        name: javawebapp
+        app: nginx
     spec:
       containers:
-      - image: nginx
-        name: javawebapp
+      - name: nginx
+        image: nginx:1.14.2
         ports:
-        - name: javawebapp
-          containerPort: 80
+        - containerPort: 80

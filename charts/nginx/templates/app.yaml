@@ -20,5 +20,4 @@ spec:
         ports:
         - containerPort: 80
       imagePullSecrets:
-      - name: gcr-cred
-        namespace: default
+      - name: sidcred

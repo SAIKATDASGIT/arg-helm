@@ -1,5 +1,5 @@
 replicas: 1
 image:
-  tag: v2
+  tag: "v2"
   name: gcr.io/arkhia/nginx
   
